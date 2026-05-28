@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rachana Singh — IT Project Coordinator Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0D0D0D;
+  --paper:#F5F2EE;
+  --accent:#2E7D52;
+  --accent-light:#6DB88A;
+  --gold:#C8A96E;
+  --muted:#9B9589;
+  --white:#FFFFFF;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--white);overflow-x:hidden}
+.skip{position:absolute;top:-100%;left:1rem;background:var(--accent);color:#fff;padding:.4rem 1rem;border-radius:4px;font-size:.85rem;text-decoration:none;z-index:999}
+.skip:focus{top:1rem}
+
+nav{position:fixed;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:1.5rem 3rem;z-index:100}
+.nav-name{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--white);text-decoration:none;opacity:.9}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-size:.75rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--white)}
+
+/* HERO */
+.hero{height:100vh;min-height:600px;display:flex;flex-direction:column;justify-content:flex-end;padding:0 3rem 5rem;position:relative;overflow:hidden;background:#0D0D0D}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 40%,rgba(46,125,82,.08) 0%,transparent 70%),radial-gradient(ellipse 50% 80% at 10% 80%,rgba(255,255,255,.02) 0%,transparent 60%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:80px 80px}
+.hero-eyebrow{font-size:.7rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-light);margin-bottom:1.5rem}
+.hero-h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,8vw,7.5rem);line-height:1.02;font-weight:400;color:var(--white);max-width:960px;margin-bottom:2.5rem}
+.hero-h1 em{font-style:italic;color:var(--accent-light)}
+.hero-sub{font-size:.95rem;color:rgba(255,255,255,.5);max-width:520px;line-height:1.75;margin-bottom:3rem}
+.hero-bottom{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:2rem}
+.hero-badges{display:flex;flex-wrap:wrap;gap:.5rem}
+.hbadge{border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:.3rem .9rem;font-size:.68rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.hbadge.green{border-color:rgba(46,125,82,.5);color:var(--accent-light)}
+.hbadge.gold{border-color:rgba(200,169,110,.4);color:var(--gold)}
+.scroll-hint{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.25);display:flex;align-items:center;gap:.75rem;white-space:nowrap}
+.scroll-hint::before{content:'';display:block;width:40px;height:1px;background:rgba(255,255,255,.15)}
+
+/* ABOUT */
+.about{background:var(--paper);color:var(--ink);padding:8rem 3rem;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
+.about-label{font-size:.68rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem}
+.about-h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.8rem);line-height:1.2;font-weight:400;color:var(--ink)}
+.about-h2 em{font-style:italic;color:var(--accent)}
+.about-p{font-size:1rem;line-height:1.85;color:#3D3830;margin-bottom:1.5rem}
+.differentiator{background:rgba(46,125,82,.06);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;margin:2rem 0}
+.differentiator-label{font-size:.65rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+.differentiator-text{font-size:.9rem;color:#3D3830;line-height:1.7}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3rem;padding-top:3rem;border-top:1px solid rgba(13,13,13,.1)}
+.stat-num{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:400;color:var(--ink);line-height:1;margin-bottom:.25rem}
+.stat-label{font-size:.72rem;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+
+/* SKILLS */
+.skills{background:var(--ink);padding:8rem 3rem}
+.skills-h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:400;color:var(--white);margin-bottom:4rem}
+.skills-h2 em{font-style:italic;color:var(--accent-light)}
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.06)}
+.skill-block{background:var(--ink);padding:2rem}
+.skill-block-num{font-family:'Playfair Display',serif;font-size:2rem;color:rgba(255,255,255,.06);margin-bottom:1rem}
+.skill-block-title{font-size:.72rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--accent-light);margin-bottom:.75rem}
+.skill-block-items{font-size:.85rem;color:rgba(255,255,255,.45);line-height:1.8}
+
+/* PROJECTS */
+.work{background:var(--paper);color:var(--ink);padding:8rem 3rem}
+.work-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:5rem;flex-wrap:wrap;gap:2rem}
+.work-h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:400;color:var(--ink)}
+.work-h2 em{font-style:italic;color:var(--accent)}
+.work-count{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.project-list{display:flex;flex-direction:column}
+.project-item{border-top:1px solid rgba(13,13,13,.1);padding:2.5rem 0;display:grid;grid-template-columns:3rem 1fr auto;gap:2rem;align-items:start}
+.project-item:last-child{border-bottom:1px solid rgba(13,13,13,.1)}
+.project-item:hover{background:rgba(13,13,13,.02)}
+.project-num{font-family:'Playfair Display',serif;font-size:.85rem;color:rgba(13,13,13,.2);padding-top:.2rem}
+.project-tags-row{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.75rem}
+.ptag{font-size:.62rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .6rem;border-radius:100px;background:rgba(46,125,82,.1);color:var(--accent)}
+.ptag.blue{background:rgba(56,108,180,.1);color:#3A6EBA}
+.ptag.gold{background:rgba(200,169,110,.1);color:#8B6B3A}
+.project-name-big{font-family:'Playfair Display',serif;font-size:clamp(1.3rem,2.5vw,2rem);font-weight:400;color:var(--ink);margin-bottom:.4rem;line-height:1.2}
+.project-role-small{font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem}
+.project-desc-small{font-size:.875rem;color:#4A4238;line-height:1.7;max-width:600px}
+.kpi-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+.kpi{background:rgba(46,125,82,.08);border:1px solid rgba(46,125,82,.18);border-radius:8px;padding:.35rem .8rem;font-size:.72rem;font-weight:500;color:var(--accent)}
+.project-link-btn{display:inline-flex;align-items:center;gap:.4rem;font-size:.7rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);text-decoration:none;border:1px solid rgba(46,125,82,.3);border-radius:100px;padding:.5rem 1.1rem;transition:background .2s,color .2s;white-space:nowrap;margin-top:.25rem;flex-shrink:0}
+.project-link-btn:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.project-link-btn.dim{color:var(--muted);border-color:rgba(13,13,13,.12);cursor:default}
+.project-link-btn.dim:hover{background:transparent;color:var(--muted)}
+
+/* TECH BACKGROUND */
+.techbg{background:var(--ink);padding:8rem 3rem}
+.techbg-h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:400;color:var(--white);margin-bottom:1rem}
+.techbg-h2 em{font-style:italic;color:var(--accent-light)}
+.techbg-sub{font-size:.95rem;color:rgba(255,255,255,.4);max-width:560px;line-height:1.7;margin-bottom:4rem}
+.techbg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:rgba(255,255,255,.06)}
+.techbg-item{background:var(--ink);padding:1.75rem 1.5rem}
+.techbg-company{font-size:.65rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--accent-light);margin-bottom:.4rem}
+.techbg-role{font-size:.95rem;color:rgba(255,255,255,.65);margin-bottom:.2rem}
+.techbg-dates{font-size:.75rem;color:rgba(255,255,255,.25)}
+
+/* CONTACT */
+.contact{background:var(--paper);color:var(--ink);padding:8rem 3rem;text-align:center}
+.contact-label{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem}
+.contact-h2{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:400;line-height:1.1;color:var(--ink);margin-bottom:2.5rem}
+.contact-h2 em{font-style:italic;color:var(--accent)}
+.contact-email{display:inline-block;font-size:1.1rem;color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(46,125,82,.3);padding-bottom:.2rem;margin-bottom:3rem;transition:border-color .2s}
+.contact-email:hover{border-color:var(--accent)}
+.contact-meta{font-size:.75rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+
+footer{border-top:1px solid rgba(13,13,13,.08);padding:1.5rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;background:var(--paper)}
+.foot-name{font-family:'Playfair Display',serif;font-size:.9rem;color:rgba(13,13,13,.4)}
+.foot-note{font-size:.68rem;color:rgba(13,13,13,.25);letter-spacing:.05em}
+
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+@media(max-width:900px){
+  nav{padding:1.25rem 1.5rem}
+  .hero{padding:0 1.5rem 4rem}
+  .about,.skills,.work,.techbg,.contact{padding:5rem 1.5rem}
+  .about{grid-template-columns:1fr;gap:3rem}
+  .skills-grid{grid-template-columns:1fr 1fr}
+  .project-item{grid-template-columns:2.5rem 1fr;grid-template-rows:auto auto}
+  .project-link-btn{grid-column:2}
+  footer{padding:1.5rem}
+}
+@media(max-width:600px){
+  .nav-links{display:none}
+  .skills-grid{grid-template-columns:1fr}
+  .about-stats{grid-template-columns:1fr 1fr}
+  .hero-h1{font-size:clamp(2.4rem,10vw,4rem)}
+}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip">Skip to main content</a>
+
+<nav aria-label="Site navigation">
+  <a href="#" class="nav-name">Rachana Singh</a>
+  <ul class="nav-links" role="list">
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#background">Background</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="hero" role="banner">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-grid" aria-hidden="true"></div>
+  <p class="hero-eyebrow">IT Project Coordinator — Denver, CO</p>
+  <h1 class="hero-h1">I deliver projects<br>teams are <em>proud</em><br>to ship.</h1>
+  <p class="hero-sub">CSM-certified coordinator with hands-on Agile delivery experience — and 8+ years as a front-end developer that means I truly understand the teams I lead.</p>
+  <div class="hero-bottom">
+    <div class="hero-badges" role="list">
+      <span class="hbadge green" role="listitem">CSM Certified</span>
+      <span class="hbadge" role="listitem">SAFe Agile</span>
+      <span class="hbadge" role="listitem">Jira &amp; Confluence</span>
+      <span class="hbadge gold" role="listitem">PMP In Progress</span>
+      <span class="hbadge" role="listitem">95% On-Time Delivery</span>
+      <span class="hbadge" role="listitem">M.S. Information Systems</span>
+    </div>
+    <span class="scroll-hint" aria-hidden="true">Scroll to explore</span>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ABOUT -->
+<section class="about" id="about" aria-labelledby="about-h">
+  <div>
+    <p class="about-label">About</p>
+    <h2 class="about-h2" id="about-h">I turn complexity<br>into <em>clarity</em>.</h2>
+  </div>
+  <div>
+    <p class="about-p">I'm a CSM-certified IT Project Coordinator who bridges the gap between technical teams and business stakeholders. I translate ambiguous requirements into actionable sprint tasks, run Agile ceremonies that actually move the needle, and keep programs on track even when priorities shift.</p>
+
+    <div class="differentiator" role="note" aria-label="Key differentiator">
+      <p class="differentiator-label">What makes me different</p>
+      <p class="differentiator-text">My first 8+ years were spent as a front-end developer — working for clients like Apple, AstraZeneca, and Heartland. I made a deliberate move into project coordination because I saw how much better delivery goes when a coordinator actually understands the technical work. I don't just track tickets. I speak the language of the team.</p>
+    </div>
+
+    <p class="about-p">M.S. Information Systems, University of Colorado Denver (GPA 3.7, May 2026). Based in Denver, CO. No sponsorship required.</p>
+
+    <div class="about-stats" role="list" aria-label="Key metrics">
+      <div role="listitem">
+        <div class="stat-num">95%</div>
+        <div class="stat-label">On-Time Delivery</div>
+      </div>
+      <div role="listitem">
+        <div class="stat-num">30%</div>
+        <div class="stat-label">Sprint Carryover Reduced</div>
+      </div>
+      <div role="listitem">
+        <div class="stat-num">5+</div>
+        <div class="stat-label">Concurrent Projects</div>
+      </div>
+      <div role="listitem">
+        <div class="stat-num">50+</div>
+        <div class="stat-label">Jira Projects Optimized</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills" id="skills" aria-labelledby="skills-h">
+  <h2 class="skills-h2" id="skills-h">What I bring to<br>every <em>program</em></h2>
+  <div class="skills-grid" role="list">
+    <div class="skill-block" role="listitem">
+      <div class="skill-block-num" aria-hidden="true">01</div>
+      <p class="skill-block-title">Agile Delivery</p>
+      <p class="skill-block-items">Sprint Planning · Backlog Management · Standups · Retrospectives · SAFe PI Planning · Kanban · Scrum · Release Planning</p>
+    </div>
+    <div class="skill-block" role="listitem">
+      <div class="skill-block-num" aria-hidden="true">02</div>
+      <p class="skill-block-title">Project Tools</p>
+      <p class="skill-block-items">Jira Software · Jira Service Management · Confluence · ServiceNow · Bitbucket · Power BI · Tableau · Advanced Excel</p>
+    </div>
+    <div class="skill-block" role="listitem">
+      <div class="skill-block-num" aria-hidden="true">03</div>
+      <p class="skill-block-title">Stakeholder Management</p>
+      <p class="skill-block-items">Stakeholder Mapping · Status Reporting · Risk Management · Escalation Handling · Client Liaison · Cross-Functional Coordination</p>
+    </div>
+    <div class="skill-block" role="listitem">
+      <div class="skill-block-num" aria-hidden="true">04</div>
+      <p class="skill-block-title">Documentation</p>
+      <p class="skill-block-items">Program Charters · User Stories · OKR Definition · Roadmap Alignment · Requirements Gathering · Process Documentation</p>
+    </div>
+    <div class="skill-block" role="listitem">
+      <div class="skill-block-num" aria-hidden="true">05</div>
+      <p class="skill-block-title">Technical Fluency</p>
+      <p class="skill-block-items">HTML · CSS · JavaScript · Python · SQL · API Integrations · Cloud (GCP/AWS/Azure) · WordPress · Magento · Shopify</p>
+    </div>
+    <div class="skill-block" role="listitem">
+      <div class="skill-block-num" aria-hidden="true">06</div>
+      <p class="skill-block-title">Reporting & Analytics</p>
+      <p class="skill-block-items">Power BI Dashboards · Sprint Velocity · KPI Reporting · Burndown Charts · Executive Summaries · Program Health Tracking</p>
+    </div>
+  </div>
+</section>
+
+<!-- COORDINATOR PROJECTS -->
+<section class="work" id="work" aria-labelledby="work-h">
+  <div class="work-header">
+    <div>
+      <h2 class="work-h2" id="work-h">Coordination <em>experience</em></h2>
+      <p style="font-size:.85rem;color:var(--muted);margin-top:.5rem">My direct IT Project Coordinator roles</p>
+    </div>
+    <span class="work-count" aria-label="2 roles">02 Roles</span>
+  </div>
+
+  <div class="project-list" role="list">
+
+    <article class="project-item" role="listitem" aria-labelledby="p1">
+      <span class="project-num" aria-hidden="true">01</span>
+      <div>
+        <div class="project-tags-row" aria-label="Tags">
+          <span class="ptag">SAFe Agile</span>
+          <span class="ptag blue">Enterprise</span>
+          <span class="ptag">Jira / Confluence</span>
+          <span class="ptag">Platform Optimization</span>
+          <span class="ptag">Power BI</span>
+        </div>
+        <h3 class="project-name-big" id="p1">Enterprise Agile Program</h3>
+        <p class="project-role-small">IT Project Coordinator (Intern) — Intrado &nbsp;|&nbsp; May–Aug 2025 &nbsp;|&nbsp; Hybrid</p>
+        <p class="project-desc-small">Standardized Jira and Confluence project structures, naming conventions, and permission frameworks across enterprise teams — reducing onboarding time for new projects. Executed a platform optimization initiative: archived 50+ inactive projects and rebuilt dashboards, improving team-reported usability scores. Contributed to SAFe PI Planning, sprint ceremonies, and cross-team dependency tracking. Developed Power BI dashboards for real-time program visibility.</p>
+        <div class="kpi-row" aria-label="Key results">
+          <span class="kpi">50+ Jira projects archived &amp; rebuilt</span>
+          <span class="kpi">Reduced onboarding time</span>
+          <span class="kpi">SAFe PI Planning participation</span>
+          <span class="kpi">Power BI dashboards delivered</span>
+        </div>
+      </div>
+      <span class="project-link-btn dim" aria-label="Internal program">Internal</span>
+    </article>
+
+    <article class="project-item" role="listitem" aria-labelledby="p2">
+      <span class="project-num" aria-hidden="true">02</span>
+      <div>
+        <div class="project-tags-row" aria-label="Tags">
+          <span class="ptag">Scrum</span>
+          <span class="ptag">Backlog Management</span>
+          <span class="ptag blue">Multi-Project</span>
+          <span class="ptag">Client Liaison</span>
+          <span class="ptag gold">Full Ownership</span>
+        </div>
+        <h3 class="project-name-big" id="p2">Multi-Project Agile Delivery</h3>
+        <p class="project-role-small">IT Project Coordinator — BrowbybarReema &nbsp;|&nbsp; Mar 2023–Mar 2024 &nbsp;|&nbsp; Remote</p>
+        <p class="project-desc-small">Owned end-to-end delivery across 5+ concurrent web projects simultaneously. Translated complex business requirements into prioritized user stories and sprint-ready Jira tasks. Facilitated all Agile ceremonies — standups, sprint planning, retrospectives, demos. Served as primary liaison between clients, developers, and designers. Authored program charters with scope, timelines, and OKRs; led roadmap alignment sessions to close feature prioritization gaps.</p>
+        <div class="kpi-row" aria-label="Key results">
+          <span class="kpi">95%+ on-time milestone delivery</span>
+          <span class="kpi">~30% sprint carryover reduced</span>
+          <span class="kpi">5+ concurrent projects</span>
+          <span class="kpi">Primary client liaison</span>
+        </div>
+      </div>
+      <span class="project-link-btn dim" aria-label="Internal project">Internal</span>
+    </article>
+
+  </div>
+</section>
+
+<!-- TECHNICAL BACKGROUND -->
+<section class="techbg" id="background" aria-labelledby="techbg-h">
+  <h2 class="techbg-h2" id="techbg-h">My technical <em>roots</em></h2>
+  <p class="techbg-sub">Before moving into coordination, I spent 8+ years as a front-end developer at enterprise companies. This background is what makes me an unusually effective coordinator — I understand what I'm asking of engineering teams.</p>
+  <div class="techbg-grid" role="list">
+    <div class="techbg-item" role="listitem">
+      <p class="techbg-company">Hogarth</p>
+      <p class="techbg-role">Front-End Developer</p>
+      <p class="techbg-dates">Client: Apple &nbsp;·&nbsp; 2022</p>
+    </div>
+    <div class="techbg-item" role="listitem">
+      <p class="techbg-company">Fulcrum Commerce</p>
+      <p class="techbg-role">Front-End Developer</p>
+      <p class="techbg-dates">Client: Heartland &nbsp;·&nbsp; 2021–2022</p>
+    </div>
+    <div class="techbg-item" role="listitem">
+      <p class="techbg-company">Unleaded Group</p>
+      <p class="techbg-role">Front-End Developer</p>
+      <p class="techbg-dates">2020–2021</p>
+    </div>
+    <div class="techbg-item" role="listitem">
+      <p class="techbg-company">Accenture</p>
+      <p class="techbg-role">Technology Architect</p>
+      <p class="techbg-dates">Client: AstraZeneca &nbsp;·&nbsp; 2014–2017</p>
+    </div>
+    <div class="techbg-item" role="listitem">
+      <p class="techbg-company">Krish Technolabs</p>
+      <p class="techbg-role">Sr. Front-End Developer</p>
+      <p class="techbg-dates">Client: Zagat &nbsp;·&nbsp; 2012–2014</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact" aria-labelledby="contact-h">
+  <p class="contact-label">Let's connect</p>
+  <h2 class="contact-h2" id="contact-h">Ready to <em>deliver</em><br>together.</h2>
+  <br>
+  <a href="mailto:Rjaswall022@gmail.com" class="contact-email">Rjaswall022@gmail.com</a>
+  <br><br>
+  <p class="contact-meta">Denver, CO &nbsp;·&nbsp; 720-546-5420 &nbsp;·&nbsp; No Sponsorship Required &nbsp;·&nbsp; Colorado Resident</p>
+</section>
+
+</main>
+
+<footer role="contentinfo">
+  <span class="foot-name">Rachana Singh — IT Project Coordinator</span>
+  <span class="foot-note">CSM Certified · M.S. Information Systems, CU Denver · © 2026</span>
+</footer>
+
+</body>
+</html>
